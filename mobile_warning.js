@@ -4,4 +4,4 @@ function getDevice() {
 	}
 }
 
-window.onload = getDevice;
+window.onload = getDevice();
