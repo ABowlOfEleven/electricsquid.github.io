@@ -3,18 +3,20 @@
 <head>
 	<title>ElectricSquid's Website</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/png" href="images/favicon.png">
 	<script type="text/javascript" src="windows.js"></script>
 	<script type="text/javascript" src="mobile_warning.js"></script>
 	<!-- TODO LIST
-	Fix centering of table horizontally
+	Fix centering of panel table horizontally
 	Create windows
-	When app has been opened, change the apps icon onclick event to a different one for minimizing and unminimizing the window
-	Add mobile warning
+	When done add a hover image for app icons on panel
+	Make windows dragable
+	Add function to maximize window button (Besure to leave space for panel)
 	-->
 </head>
 <body>
 	<div class="panel">
-		<table>
+		<table id="panel_table">
 			<tr> <!-- table row 1 (Window icons)-->
 				<td><img src="images/app_test.png" class="panel_app" id="panel_app_test" onclick="appOpen('test')"></td>
 			</tr>
@@ -22,8 +24,38 @@
 				<td align="center"><img src="images/panel_window_inactive.png" class="panel_windowStatus" id="panel_winStat_test"></td>
 			</tr>
 		</table>
-		<!-- Create panel here (Will be like a dock to open windows) -->
-	</div> <!-- div panel end -->
+	</div>
 	<!-- Create divs for each window -->
+	<div class="window" id="window_test">
+		<table id="window_table_test">
+			<tr class="window_title_bar" id="window_title_test"> <!-- Title bar table row 1 -->
+				<td id="window_title_space_test"></td>
+				<td id="window_title_text_test"><small>Title bar</small></td>
+				<td><img src="images/window_min.png" class="window_buttons" id="window_min_test" onclick="appMin('test')"></td>
+				<td><img src="images/window_max.png" class="window_buttons" id="window_max_test"></td>
+				<td><img src="images/window_close.png" class="window_buttons" id="window_close_test" onclick="appClose('test')"></td>
+			</tr>
+			<tr> <!-- Window content table row 2 -->
+
+				<th>Project1</th> <!-- Put first project title here -->
+
+				<th colspan="4">Project Content</th>
+					
+				<tr> <!-- table row for project names -->
+					<th>Project2</th>
+				</tr>
+				<tr>
+					<th>Project3</th>
+				</tr>
+				<tr>
+					<th>Project4</th>
+				</tr>
+				<tr>
+					<th>Project5</th>
+				</tr>
+
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
