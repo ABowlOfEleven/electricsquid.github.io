@@ -1,10 +1,13 @@
-#panel_winStat_test { /* An ID address to the panel window status for application test */
-	/* */
-}
+/* TODO LIST
+When a window is first loaded, use screen resolution and percentages to define initial size
+Allow user to resize window
+Change fonts
+Make window buttons a bit smaller
+Use 'em' for resizability when done (BACK ALL FILES BEFORE ADJUSTING)
+*/
 
-.panel_windowStatus {
-	width: 10px;
-	height: 10px;
+body {
+	background-color: #2D2D2D;
 }
 
 .panel { /* A Class address to the panel div */
@@ -13,15 +16,49 @@
 	bottom: 0; /* Place div at the bottom */
 }
 
+#panel_table {
+	border: 1px solid black; /* border only for debugging, remove when done */
+}
+
 .panel_app { /* Class reference to panel apps */
 	width: 50px;
 	height: 50px;
 }
 
-table {
-	border: 1px solid black; /* border only for debugging, remove when done */
+.panel_windowStatus {
+	width: 10px;
+	height: 10px;
 }
 
-body {
-	background-color: #2D2D2D;
+#panel_winStat_test { /* An ID address to the panel window status for application test */
+	/* */
+}
+
+.window_title_bar {
+	/* Put stuff like window title font, title bar color, window color, etc. (Global stuff for every window)*/
+}
+
+#window_test {
+	display: none;
+}
+
+#window_table_test {
+	border: 1px solid green;
+	border-collapse: collapse;
+	background-color: #262626;
+}
+
+#window_title_test {
+	background-color: #1A1A1A;
+	color: white;
+}
+
+#window_title_space_test {
+	/* */
+	padding-right: 200px;
+}
+
+#window_title_text_test {
+	padding-left: 100px;
+	padding-right: 300px;
 }
