@@ -10,7 +10,6 @@
 	Fix centering of panel table horizontally
 	Create windows
 	When done add a hover image for app icons on panel
-	Make windows dragable
 	Add function to maximize window button (Besure to leave space for panel)
 	-->
 </head>
@@ -30,7 +29,7 @@
 		<table id="window_table_test">
 			<tr class="window_title_bar" id="window_title_test"> <!-- Title bar table row 1 -->
 				<td id="window_title_space_test"></td>
-				<td id="window_title_text_test"><small>Title bar</small></td>
+				<td id="window_title_text_test"><small>Test Application</small></td>
 				<td><img src="images/window_min.png" class="window_buttons" id="window_min_test" onclick="appMin('test')"></td>
 				<td><img src="images/window_max.png" class="window_buttons" id="window_max_test"></td>
 				<td><img src="images/window_close.png" class="window_buttons" id="window_close_test" onclick="appClose('test')"></td>
@@ -39,7 +38,7 @@
 
 				<th>Project1</th> <!-- Put first project title here -->
 
-				<th colspan="4">Project Content</th>
+				<th colspan="4" rowspan="5">Project Content</th>
 					
 				<tr> <!-- table row for project names -->
 					<th>Project2</th>
@@ -57,5 +56,9 @@
 			</tr>
 		</table>
 	</div>
+
+	<script type="text/javascript">
+		addListeners();
+	</script>
 </body>
 </html>
