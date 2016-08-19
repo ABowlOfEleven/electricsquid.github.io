@@ -56,3 +56,8 @@ body {
 	white-space: nowrap; /* Stops text from breaking to seperate lines */
 
 }
+
+.window_button_cell {
+	height: 13px;
+	width: 13px;	
+}
