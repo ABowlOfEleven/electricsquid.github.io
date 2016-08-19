@@ -53,8 +53,6 @@ body {
 
 .window_title_text {
 	text-align: center;
-	padding-left: 40%;
-	padding-right: 37.7%;
 	white-space: nowrap; /* Stops text from breaking to seperate lines */
 
 }
