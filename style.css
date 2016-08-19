@@ -1,9 +1,10 @@
 /* TODO LIST
-When a window is first loaded, use screen resolution and percentages to define initial size
-Allow user to resize window
 Change fonts
 Make window buttons a bit smaller
-Use 'em' for resizability when done (BACK ALL FILES BEFORE ADJUSTING)
+Use 'em' for resizability when done (BACK ALL FILES BEFORE ADJUSTING, maybe)
+Title bar height isn't the right heigh after divSize() (Seems to be based on screen resolution)
+
+When finished adding functionallity. Change IDs to classes so it will be applied to ALL apps and not just specific ones
 */
 
 body {
@@ -12,12 +13,14 @@ body {
 
 .panel { /* A Class address to the panel div */
 	position: absolute;
-	left: 48%; /* Center the entire div horizontally (Temporary centering method, will have to be adjusted for every icon you add or remove)*/
-	bottom: 0; /* Place div at the bottom */
+	width: 56px; /* Width of div */
+	bottom: 0;
+	left: 50%;
+	margin-left: -28px; /* Half of width */
 }
 
-#panel_table {
-	border: 1px solid black; /* border only for debugging, remove when done */
+#panel_table { /* An ID address to the panel table */
+	/* border: 1px solid black; /* border only for debugging, remove when done */
 }
 
 .panel_app { /* Class reference to panel apps */
@@ -30,35 +33,28 @@ body {
 	height: 10px;
 }
 
-#panel_winStat_test { /* An ID address to the panel window status for application test */
-	/* */
-}
-
-.window_title_bar {
-	/* Put stuff like window title font, title bar color, window color, etc. (Global stuff for every window)*/
-}
-
-#window_test {
+.window {
 	display: none;
 }
 
-#window_table_test {
-	border: 1px solid green;
+.window_table {
+	border: 1px solid black;
 	border-collapse: collapse;
 	background-color: #262626;
+	width: 100%;
+	height: 100%;
 }
 
-#window_title_test {
+.window_title_bar {
 	background-color: #1A1A1A;
 	color: white;
+	height: 1.9444444444444444%;
 }
 
-#window_title_space_test {
-	/* */
-	padding-right: 200px;
-}
+.window_title_text {
+	text-align: center;
+	padding-left: 40%;
+	padding-right: 37.7%;
+	white-space: nowrap; /* Stops text from breaking to seperate lines */
 
-#window_title_text_test {
-	padding-left: 100px;
-	padding-right: 300px;
 }
