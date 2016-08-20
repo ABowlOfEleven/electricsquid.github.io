@@ -1,13 +1,10 @@
 /* TODO LIST
-Change fonts
 Make window buttons a bit smaller
-
-When finished adding functionallity. Change IDs to classes so it will be applied to ALL apps and not just specific ones
 */
 
 body {
 	background-color: #2D2D2D;
-	height: 98%;
+	height: 98%; 
 }
 
 html {
@@ -58,10 +55,11 @@ html {
 .window_title_text {
 	text-align: center;
 	white-space: nowrap; /* Stops text from breaking to seperate lines */
-
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 90%;
 }
 
 .window_button_cell {
-	height: 13px;
-	width: 13px;	
+	height: 1%;
+	width: 1%;
 }
