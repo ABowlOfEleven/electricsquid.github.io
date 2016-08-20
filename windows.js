@@ -5,16 +5,15 @@ var winMax = false;
 // Maybe consider doing something on window resize
 
 // ---BUGS--- (FIX BEFORE ADDING FEATURES)
-// Window can cover panel. Make it on the top layer. (USE CSS)
+// Stop window from leaving edges? Maybe?
 
 // ---FEATURES---
-// When restoring size via dragging, Place window where cursor is after minimized (Do later. Other stuff is more important)
-// Allow user to resize window
+// When restoring size via dragging, Place window where cursor is after minimized (Do later. Other stuff is more important) (Not sure how to do this yet)
+// Allow user to resize window (not sure how to trigger this event, See function for how to carry out event)
 
 function addListeners() { // Add event listeners for actions (NEED TO PUT ID GAINING METHOD LATER)
 	console.log("Adding Listeners");
 	var title = document.getElementsByClassName("window_title_text"); // Get an array of title bars (dynamic method)
-	console.log(title);
 	for (var i = 0; i < title.length; i++) {
 		title[i].addEventListener('mousedown', mouseDown, false); // For every element under the specified class, add event listener
 	}
@@ -33,7 +32,7 @@ function mouseDown(e) { // Loads of stuff
 		appMax(appName);
 	}
 
-	var div = document.getElementById('window_test'); // Get window div (still need id gaining method)
+	var div = document.getElementById("window_" + appName); // Get window div
 	offY = e.clientY-parseInt(div.offsetTop); // Get a cursor offset to account for the position of where the drag starts
 	offX = e.clientX-parseInt(div.offsetLeft); // ^
 	window.addEventListener('mousemove', dragMeBaby, true); // Add listener for mouse cursor position
@@ -89,9 +88,6 @@ function appMax(application) { // Change div size
 		// Restore old size
 		console.log("Restore: " + application);
 		winMax = false;
-
-		console.log(winWidth);
-		console.log(winHeight);
 
 		divMax.style.width = winWidth + "px";
 		divMax.style.height = winHeight + "px";
