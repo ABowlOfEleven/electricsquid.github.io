@@ -1,14 +1,17 @@
 /* TODO LIST
 Change fonts
 Make window buttons a bit smaller
-Use 'em' for resizability when done (BACK ALL FILES BEFORE ADJUSTING, maybe)
-Title bar height isn't the right heigh after divSize() (Seems to be based on screen resolution)
 
 When finished adding functionallity. Change IDs to classes so it will be applied to ALL apps and not just specific ones
 */
 
 body {
 	background-color: #2D2D2D;
+	height: 98%;
+}
+
+html {
+	height: 91.5%
 }
 
 .panel { /* A Class address to the panel div */
@@ -17,6 +20,7 @@ body {
 	bottom: 0;
 	left: 50%;
 	margin-left: -28px; /* Half of width */
+	z-index: 1;
 }
 
 #panel_table { /* An ID address to the panel table */
