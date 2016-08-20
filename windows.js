@@ -1,8 +1,13 @@
-var winShown, offX, offY, appName;
+var winShown, offX, offY, appName, winWidth, winHeight, screenX, screenY, sizeX, sizeY;
 var winMax = false;
 
 // DRAGGING DOESN'T WORK ON TOUCH DECVICES
 // Maybe consider doing something on window resize
+
+// ---BUGS--- (FIX BEFORE ADDING FEATURES)
+// Window can cover panel. Make it on the top layer. (USE CSS)
+
+// ---FEATURES---
 // When restoring size via dragging, Place window where cursor is after minimized (Do later. Other stuff is more important)
 // Allow user to resize window
 
@@ -79,29 +84,30 @@ function appMin(application) { // Always call this when minimizing
 }
 
 function appMax(application) { // Change div size
+	var divMax = document.getElementById("window_" + application);
 	if (winMax == true) {
 		// Restore old size
 		console.log("Restore: " + application);
 		winMax = false;
-		document.getElementById("window_" + application).style.top = winTop; // Restore old size from maximizing
-		document.getElementById("window_" + application).style.left = winLeft;
-		document.getElementById("window_" + application).style.width = winWid; // Set divs width from offset
-		document.getElementById("window_" + application).offsetHeight = winHei; // Set divs heigh from offset
 
-		document.getElementById("window_" + application).style.width = ""; // Empty width property
-		document.getElementById("window_" + application).style.bottom = ""; // Empty bottom property
+		console.log(winWidth);
+		console.log(winHeight);
+
+		divMax.style.width = winWidth + "px";
+		divMax.style.height = winHeight + "px";
+		divMax.style.top = ""; // Clear these
+		divMax.style.left = ""; // ^
 	} else {
 		// Maximize
 		console.log("Maximizing: " + application);
-		var winTop = document.getElementById("window_" + application).style.top; // Grab old dimensions before maximizing
-		var winLeft = document.getElementById("window_" + application).style.left;
-		var winWid = document.getElementById("window_" + application).offsetWidth;
-		var winHei = document.getElementById("window_" + application).offsetHeight;
+		winWidth = divMax.offsetWidth;
+		winHeight = divMax.offsetHeight;
+
 		winMax = true;
-		document.getElementById("window_" + application).style.top = "0";
-		document.getElementById("window_" + application).style.left = "0";
-		document.getElementById("window_" + application).style.bottom = "84px"; // HEIGHT OF PANEL
-		document.getElementById("window_" + application).style.width = "100%";
+		divMax.style.top = "0";
+		divMax.style.left = "0";
+		divMax.style.height = screenY-84 + "px"; // SUBTRACT HEIGHT OF PANEL
+		divMax.style.width = "100%";
 	}
 }
 
@@ -112,18 +118,22 @@ function winShow(application) {
 
 function winResize() {
 	// Stuff for dragging window to resize
+	// Just change the size of the div
+	// Table will fill div
+	// Adjust using .style.width and .style.height
+
+	// Either apply listener to border of table or to div?
+
+	// Maybe get mouse position then see if it is the same as the edge of the div
 }
 
 function divSize() { // Set the size of the windows default size (Possibly rename and have this scale lots of elements based off of resolution) (Use this instead of setting CSS width and height percentages because when the window initially shows it isn't the right size)
-	var screenX = window.innerWidth; // Get browsers resolution
-	var screenY = window.innerHeight; // ^
-	var sizeX = screenX*0.40; // Get 40% of resolution
-	var sizeY = screenY*0.40; // ^
+	screenX = window.innerWidth; // Get browsers resolution
+	screenY = window.innerHeight; // ^
+	sizeX = screenX*0.50; // Get 40% of resolution
+	sizeY = screenY*0.50; // ^
 	console.log("Size: " + sizeX + "x" + sizeY);
-
 	var winDiv = document.getElementsByClassName("window");
-	console.log("divSize: " + winDiv);
-
 	for (var i = 0; i < winDiv.length; i++) { // For every ID under "window" class, set width and height
 		winDiv[i].style.width = sizeX + "px";
 		winDiv[i].style.height = sizeY + "px";
