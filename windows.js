@@ -36,6 +36,8 @@ function mouseDown(e) { // Loads of stuff
 	offY = e.clientY-parseInt(div.offsetTop); // Get a cursor offset to account for the position of where the drag starts
 	offX = e.clientX-parseInt(div.offsetLeft); // ^
 	window.addEventListener('mousemove', dragMeBaby, true); // Add listener for mouse cursor position
+
+	focus(appName);
 }
 
 function dragMeBaby(e) { // Set div position (Need to adjust method of gaining div name)
@@ -144,4 +146,12 @@ function resize(application,x,y) {
 	var div = document.getElementById("window_" + application);
 	div.style.width = x + "px";
 	div.style.height = y + "px";
+}
+
+function focus(application) {
+	var focDiv = document.getElementsByClassName("window"); 
+	for (var i = 0; i < focDiv.length; i++) { // For every ID under "window" class, reset z-index
+		focDiv[i].style.zIndex = "0";
+	}
+	document.getElementById("window_" + application).style.zIndex = "1"; // Bring a window to focus using z-index value
 }
