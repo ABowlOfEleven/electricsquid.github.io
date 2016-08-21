@@ -50,6 +50,10 @@ function appOpen(application) {
 	document.getElementById("panel_winStat_" + application).src = "images/panel_window_active.png"; // Turn the windows status icon to active
 	document.getElementById("panel_app_" + application).onclick = function() { appToggle(application) }; // Change applications onclick event for minimization
 	winCreate(application);
+
+	if (application == "embed") { // If the app being opened is the 'embed' app, launch embed script
+		embedSite();
+	}
 }
 
 function appToggle(application) { // For minimizing and maximizing the window when clicking app icon on panel
@@ -118,9 +122,9 @@ function winResize() {
 	// Table will fill div
 	// Adjust using .style.width and .style.height
 
-	// Either apply listener to border of table or to div?
+	// Either apply listener to border of table or to div? (Maybe place on div, then make table only take up 99% so edge can still be read)
 
-	// Maybe get mouse position then see if it is the same as the edge of the div
+	// Maybe get mouse position then see if it is the same as the edge of the div (maybe get by div.offsetWidth - div.offsetTop?)
 }
 
 function divSize() { // Set the size of the windows default size (Possibly rename and have this scale lots of elements based off of resolution) (Use this instead of setting CSS width and height percentages because when the window initially shows it isn't the right size)
@@ -134,4 +138,10 @@ function divSize() { // Set the size of the windows default size (Possibly renam
 		winDiv[i].style.width = sizeX + "px";
 		winDiv[i].style.height = sizeY + "px";
 	}
+}
+
+function resize(application,x,y) {
+	var div = document.getElementById("window_" + application);
+	div.style.width = x + "px";
+	div.style.height = y + "px";
 }
