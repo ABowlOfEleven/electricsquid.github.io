@@ -1,5 +1,5 @@
 # electricsquid.github.io - Doing something different
-This site is an experiment about not using a generic website interface. Instead opting for a window interface. Also to be used for housing random projects that I feel like adding to it, That may or may not have a useful purpose.
+This site is an experiment about not using a generic website interface. Instead opting for a window interface. Also to be used for housing random projects that I feel like adding to it, That may or may not have a useful purpose. Personally I do not find this style of GUI useful for websites because it seems kinda redundant to have a window within a window (Window-ception). And it just doesn't really feel fluid.
 
 ## Use
 If you are familiar with Linux or OSX you might recognize a few key elements of the site. It is largely based off the numix theme with a docky panel on xfce with linux.
@@ -14,3 +14,4 @@ You can resize using this syntax:
 With the current appName's being: ``` test ``` and ``` embed ```  
 ## Applications
 The test application is currently just used for demonstrating the functionality of the window mechanics. So there isn't much point to opening it for anything other than that. But you can use the embed application to embed a website (if it allows embedding) or a youtube video. Youtube videos are officially supported by my embedding method. You can use the URLs in the Url bar. Or shorthand versions by right clicking the video and clicking "Copy video URL." EX:``` https://www.youtube.com/watch?v=dQw4w9WgXcQ  https://youtu.be/dQw4w9WgXcQ ```
+I have found that twitch players (``` https://player.twitch.tv ```) can be played within the embed but it is not currently officially supported. But feel free to play around and tell me what you find!
