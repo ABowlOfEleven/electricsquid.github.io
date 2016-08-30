@@ -80,6 +80,11 @@ function appClose(application) { // For closing an app when the X button is clic
 	appMin(application);
 	document.getElementById("panel_winStat_" + application).src = "images/panel_window_inactive.png"; // Turn the windows status icon to inactive
 	document.getElementById("panel_app_" + application).onclick = function() { appOpen(application) }; // Change applications onclick event for opening
+
+	if (application == 'embed') { // If embed app is being closed, remove current video/link
+		siteUrl = "";
+		document.getElementById("iframe").src = siteUrl;
+	}
 }
 
 function appMin(application) { // Always call this when minimizing
